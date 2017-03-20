@@ -7,13 +7,6 @@ Strings::Strings(const std::string &json_data) {
   document_.Parse(json_data.c_str());
 }
 
-Strings::Strings(Strings &&copy) {
-}
-
-Strings Strings::fromJsonFile(const std::string &file_path) {
-  return Strings(cocos2d::FileUtils::getInstance()->getStringFromFile(file_path));
-}
-
 std::string Strings::get_string(const std::string &key, const std::string &default_value) const {
   if (ValidateKey(key))
     return document_[key.c_str()].GetString();

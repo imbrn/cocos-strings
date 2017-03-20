@@ -15,8 +15,6 @@ class Strings {
 
 public:
   Strings(const std::string &json_data);
-  Strings(Strings &&copy);
-  static Strings fromJsonFile(const std::string &file_path);
   virtual ~Strings() {}
   std::string get_string(const std::string &key, const std::string &default_value = "") const;
   std::vector<std::string> get_strings(const std::string &key) const;
